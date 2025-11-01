@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{E9817F55-4A5B-4E36-B03F-070E3B14F167}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBF.Infraestructure", "JBF.Infraestructure\JBF.Infraestructure.csproj", "{7AFD2D4F-8A81-4BF0-AF92-1728807E7773}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBF.Persistence", "JBF.Infraestructure\JBF.Persistence.csproj", "{7AFD2D4F-8A81-4BF0-AF92-1728807E7773}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBF.Application", "JBF.Application\JBF.Application.csproj", "{399A493F-8ED1-4D34-A812-F5F3424E3506}"
 EndProject

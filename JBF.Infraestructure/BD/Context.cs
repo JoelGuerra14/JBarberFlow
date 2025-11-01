@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using ReservaCitasBackend.Modelos;
 
-namespace Infraestructura.Persistencia.BaseDatos
+namespace JBF.Persistence.BD
 {
     public class Context : DbContext
     {
