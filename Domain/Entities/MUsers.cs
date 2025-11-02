@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using JBF.Domain.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace ReservaCitasBackend.Modelos
 {
-    public class MUsers
+    public class MUsers : AuditEntity
     {
         [Key]
         public int ID_Users { get; set; }
