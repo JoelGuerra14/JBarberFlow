@@ -33,15 +33,21 @@ namespace JBF.Persistence.Repositories
 
         public override async Task<OperationResult> GetAllasync()
         {
-            _logger.LogInformation("Intentando recuperar todos los Servicios");
-            var result = await base.GetAllasync();
-
-            if (!result.IsSuccess)
+            try
             {
-                _logger.LogError($"Error al recuperar todos los Servicios: {result.Message}");
-            }
+                var entidades = await _context.Servicios
+                                              .Where(s => !s.IsDeleted)
+                                              .AsNoTracking()
+                                              .ToListAsync();
 
-            return result;
+                _logger.LogInformation($"Se recuperaron {entidades.Count} servicios activos.");
+                return OperationResult.Success("Servicios obtenidos con éxito.", entidades);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error al recuperar todos los Servicios: {ex.Message}", ex);
+                return OperationResult.Failure($"Ocurrió un error al obtener los servicios: {ex.Message}");
+            }
         }
 
         public override async Task<OperationResult> Createasync(MServicio entity)

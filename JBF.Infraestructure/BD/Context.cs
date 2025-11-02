@@ -17,6 +17,5 @@ namespace JBF.Persistence.BD
         public DbSet<MServicio> Servicios { get; set; }
         public DbSet<MEstilista> Estilistas { get; set; }
         public DbSet<MDisponibilidad> Disponibilidades { get; set; }
-
     }
 }

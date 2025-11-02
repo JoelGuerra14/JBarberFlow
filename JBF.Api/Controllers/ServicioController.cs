@@ -17,7 +17,7 @@ namespace JBF.Api.Controllers
             _servicioService = servicioService;
         }
 
-        [HttpGet]
+        [HttpGet("GetAllServicios")]
         public async Task<IActionResult> GetAll()
         {
             var result = await _servicioService.GetAllAsync();
@@ -28,7 +28,7 @@ namespace JBF.Api.Controllers
             return Ok(result.Data);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("GetServicioById")]
         public async Task<IActionResult> GetById(int id)
         {
             var result = await _servicioService.GetByIdAsync(id);
@@ -39,7 +39,7 @@ namespace JBF.Api.Controllers
             return Ok(result.Data);
         }
 
-        [HttpPost]
+        [HttpPost("CreateServicio")]
         public async Task<IActionResult> Create([FromBody] CreateServicioDTO dto)
         {
             if (!ModelState.IsValid)
@@ -57,7 +57,7 @@ namespace JBF.Api.Controllers
             return CreatedAtAction(nameof(GetById), new { id = dtoCreado.ID_Servicio }, dtoCreado);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("UpdateServicio")]
         public async Task<IActionResult> Update(int id, [FromBody] CreateServicioDTO dto)
         {
             if (!ModelState.IsValid)
@@ -74,7 +74,7 @@ namespace JBF.Api.Controllers
             return Ok(result.Data);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("DeleteServicio")]
         public async Task<IActionResult> Delete(int id)
         {
             var result = await _servicioService.DeleteAsync(id);
