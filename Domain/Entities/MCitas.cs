@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using JBF.Domain.Base;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ReservaCitasBackend.Modelos
 {
@@ -11,5 +13,6 @@ namespace ReservaCitasBackend.Modelos
         public int ID_Servicio { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
+        public bool IsCanceled { get; set; } = false;
     }
 }
