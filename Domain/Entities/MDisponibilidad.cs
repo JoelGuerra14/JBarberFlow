@@ -11,7 +11,7 @@ namespace Domain.Entities
     {
         [Key]
         public int ID_Disponibilidad { get; set; }
-        public MEstilista Estilista { get; set; }
+        public int ID_Estilista { get; set; }
         public DayOfWeek DiaSemana { get; set; }
         public TimeSpan HoraInicio { get; set; }
         public TimeSpan HoraFin { get; set; }
