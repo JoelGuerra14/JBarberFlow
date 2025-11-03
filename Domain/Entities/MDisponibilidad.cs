@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class MDisponibilidad : AuditEntity
+    public class MDisponibilidad
     {
         [Key]
         public int ID_Disponibilidad { get; set; }
