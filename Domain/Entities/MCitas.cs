@@ -1,9 +1,10 @@
 ﻿using JBF.Domain.Base;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ReservaCitasBackend.Modelos
 {
-    public class MCitas : AuditEntity
+    public class MCitas
     {
         [Key]
         public int ID_Citas {  get; set; }
@@ -12,5 +13,6 @@ namespace ReservaCitasBackend.Modelos
         public int ID_Servicio { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
+        public bool IsCanceled { get; set; } = false;
     }
 }
