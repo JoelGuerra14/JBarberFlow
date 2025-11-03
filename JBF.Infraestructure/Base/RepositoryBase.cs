@@ -71,7 +71,7 @@ namespace JBF.Persistence.Base
             catch (Exception ex)
             {
                 result.IsSuccess = false;
-                result.Message = "Ha ocurrido un error al guardar los datos";
+                result.Message = $"Ha ocurrido un error al guardar los datos, {ex}";
             }
             return result;
         }
