@@ -13,7 +13,10 @@ namespace Domain.Entities
         [Key]
         public int ID_Estilista { get; set; }
         public string? Nombre { get; set; }
-        public string? Especialidad { get; set; }
+        public MServicio Servicio { get; set; }
         public string Email { get; set; }
+        public DayOfWeek DiaSemana { get; set; }
+        public TimeSpan HoraInicio { get; set; }
+        public TimeSpan HoraFin { get; set; }
     }
 }
