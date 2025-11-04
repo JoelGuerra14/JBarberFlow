@@ -1,15 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using JBF.Domain.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace ReservaCitasBackend.Modelos
 {
-    public class MUsers
+    public class MUsers : AuditEntity
     {
         [Key]
-        public int ID_Users { get; set; }
+        public int ID_User { get; set; }
         public string? NombreUsuario { get; set; }
-        public string? Pass { get; set; }
+        public string? PasswordHash { get; set; }
         public string? Correo { get; set; }
         public string? TipoUsuario { get; set; }
-        public bool CitaReservada { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

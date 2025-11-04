@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JBF.Domain.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Domain.Entities
     {
         [Key]
         public int ID_Disponibilidad { get; set; }
-        public MEstilista Estilista { get; set; }
+        public int ID_Estilista { get; set; }
         public DayOfWeek DiaSemana { get; set; }
         public TimeSpan HoraInicio { get; set; }
         public TimeSpan HoraFin { get; set; }

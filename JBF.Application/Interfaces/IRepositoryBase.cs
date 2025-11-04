@@ -15,6 +15,5 @@ namespace JBF.Application.Base
         Task<OperationResult> Createasync(TEntity entity);
         Task<OperationResult> Updateasync(TEntity entity);
         Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> filter);
-
     }
 }

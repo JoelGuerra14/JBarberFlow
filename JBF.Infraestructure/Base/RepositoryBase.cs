@@ -30,16 +30,16 @@ namespace JBF.Persistence.Base
 
                 if (entity != null)
                 {
-                    return OperationResult.Success("Entity retrieved successfully.", entity);
+                    return OperationResult.Success("Entidad recuperada", entity);
                 }
                 else
                 {
-                    return OperationResult.Failure($"Entity with ID {id} not found.");
+                    return OperationResult.Failure($"Entidad con el ID {id} no encontrada");
                 }
             }
             catch (Exception ex)
             {
-                return OperationResult.Failure($"An error occurred while retrieving entity by ID {id}: {ex.Message}");
+                return OperationResult.Failure($"Un error ocurrio mientras se recuperaban los datos con el ID {id}: {ex.Message}");
             }
         }
 
@@ -49,11 +49,11 @@ namespace JBF.Persistence.Base
             {
                 var entities = await Entity.ToListAsync();
 
-                return OperationResult.Success("Entities retrieved successfully.", entities);
+                return OperationResult.Success("Entidades recuperada", entities);
             }
             catch (Exception ex)
             {
-                return OperationResult.Failure($"An error occurred while retrieving all entities: {ex.Message}");
+                return OperationResult.Failure($"Ocurrio un error al recuperar todas las entidades: {ex.Message}");
             }
         }
 
@@ -65,13 +65,13 @@ namespace JBF.Persistence.Base
                 await Entity.AddAsync(entity);
                 await _context.SaveChangesAsync();
                 result.IsSuccess = true;
-                result.Message = "Entidad creada con éxito.";
+                result.Message = "Entidad creada";
                 result.Data = entity;
             }
             catch (Exception ex)
             {
                 result.IsSuccess = false;
-                result.Message = "Ha ocurrido un error al guardar los datos";
+                result.Message = $"Ha ocurrido un error al guardar los datos, {ex}";
             }
             return result;
         }
@@ -85,17 +85,16 @@ namespace JBF.Persistence.Base
                 Entity.Update(entity);
                 await _context.SaveChangesAsync();
                 result.IsSuccess = true;
-                result.Message = "Entidad actualizada con éxito.";
+                result.Message = "Entidad actualizada";
                 result.Data = entity;
             }
             catch (Exception ex)
             {
                 result.IsSuccess = false;
-                result.Message = "Ocurrió un error al actualizar los datos";
+                result.Message = $"Ocurrio un error al actualizar los datos: {ex.Message}";
             }
             return result;
         }
-
         public virtual async Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> filter)
         {
             return await Entity.AnyAsync(filter);
